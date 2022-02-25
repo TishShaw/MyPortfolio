@@ -1,5 +1,5 @@
 html {
-  --imp-text-color: #F5ABAF;
+  --imp-text-color: #AE97EC;
 }
 
 .purple {
@@ -74,7 +74,7 @@ html {
 /* Navbar Section  */
 /* --------- */
 .sticky {
-  background-color: #212038d8 !important;
+  background-color: #AE97EC !important;
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
@@ -85,7 +85,7 @@ html {
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
-  background-color: #752F32;
+  background-color: #AE97EC;
 }
 
 .navbar-toggler {
@@ -144,7 +144,7 @@ html {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: #343e47 !important;
+    background-color: #AF98ED !important;
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
@@ -209,12 +209,12 @@ html {
 /* Home section */
 /* --------- */
 .wave {
-  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below
   animation-duration: 2.1s; /* Change to speed up or slow down */
   animation-iteration-count: infinite; /* Never stop waving :) */
   transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
   display: inline-block;
-}
+} 
 
 @keyframes wave-animation {
   0% {
@@ -265,7 +265,7 @@ html {
 
 .home-content {
   padding: 3rem 0 0rem !important;
-  color: #414141;
+  color: #4D4369;
   text-align: left;
 }
 
@@ -288,12 +288,12 @@ html {
 }
 
 .main-name {
-  color: #414141;
+  color:#362469;
 }
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #414141 !important;
+  color: #AF98ED !important;
   font-weight: 600 !important;
 }
 .Typewriter__cursor {
@@ -402,7 +402,7 @@ html {
 }
 
 .icon-colour {
-  color: #ffffff !important;
+  color: #AF98ED !important;
 }
 
 .social-icon {
