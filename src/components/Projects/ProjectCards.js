@@ -1,10 +1,10 @@
-import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import { BiLinkExternal } from "react-icons/bi";
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import { BiLinkExternal } from 'react-icons/bi';
 
 function ProjectCards(props) {
-  return (
+	return (
 		<Card className='project-card-view'>
 			<Card.Img variant='top' src={props.imgPath} alt='card-img' />
 			<Card.Body>

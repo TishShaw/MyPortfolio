@@ -269,6 +269,13 @@ html {
   text-align: left;
 }
 
+@media (min-width:700px) {
+  .homeImage {
+    margin-top: 85px;
+
+  }
+}
+
 .heading-description {
   margin-left: 20px !important;
 }
@@ -325,6 +332,7 @@ html {
 }
 
 .home-about-section {
+  
   position: relative;
   padding-bottom: 70px !important;
 }
@@ -413,7 +421,7 @@ html {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: #343e47;
+  background-color: #AF98ED;
   bottom: 0 !important;
 }
 .footer-copywright {
