@@ -1,48 +1,84 @@
-import React, { useState, useEffect } from "react";
-import Preloader from "./components/Preloader";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
+import React, { useState, useEffect } from 'react';
+import Preloader from './components/Preloader';
+import Navbar from './components/Navbar';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Projects from './components/Projects/Projects';
+import Footer from './components/Footer';
+import Resume from './components/Resume/ResumeNew';
 import Contact from './components/Contact/Contact';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./style.css";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { amber, pink, grey } from '@mui/material/colors';
+import './style.css';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from './components/ScrollToTop';
+
 
 function App() {
-  const [load, upadateLoad] = useState(true);
+	const [isDarkMode, setIsDarkMode] = useState(false);
+	const [load, upadateLoad] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      upadateLoad(false);
-    }, 1200);
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			upadateLoad(false);
+		}, 1200);
 
-    return () => clearTimeout(timer);
-  }, []);
+		return () => clearTimeout(timer);
+	}, []);
 
-  return (
+	const light = createTheme({
+		palette: {
+			mode: 'light',
+		},
+	});
+
+	const getDesignTokens = (mode) => ({
+		palette: {
+			mode,
+			primary: {
+				...amber,
+				...(mode === 'dark' && {
+					main: pink[300],
+				}),
+			},
+			...(mode === 'dark' && {
+				background: {
+					default: grey[900],
+				},
+				
+			}),
+		},
+	});
+
+	const darkModeTheme = createTheme(getDesignTokens('dark'));
+
+	const toggleTheme = () => {
+		setIsDarkMode(!isDarkMode);
+	};
+
+	return (
 		<Router>
-			{load ? (
-				<Preloader load={load} />
-			) : (
-				<div className='App' id={load ? 'no-scroll' : 'scroll'}>
-					<Navbar />
-					<ScrollToTop />
-					<Switch>
-						<Route path='/' exact component={Home} />
-						<Route path='/project' component={Projects} />
-						<Route path='/about' component={About} />
-						<Route path='/resume' component={Resume} />
-						<Route path='/contact' component={Contact} />
-					</Switch>
-					<Footer />
-				</div>
-			)}
+			<ThemeProvider theme={isDarkMode? darkModeTheme : light }>
+				{load ? (
+					<Preloader load={load} />
+				) : (
+					<div className='App' id={load ? 'no-scroll' : 'scroll'}>
+						<Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+						<ScrollToTop />
+						<Switch>
+							<Route path='/' exact component={Home} />
+							<Route path='/project' component={Projects} />
+							<Route path='/about' component={About} />
+							<Route path='/resume' component={Resume} />
+							<Route path='/contact' component={Contact} />
+						</Switch>
+						<Footer />
+					</div>
+				)}
+			</ThemeProvider>
 		</Router>
 	);
 }

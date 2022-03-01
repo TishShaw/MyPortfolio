@@ -19,8 +19,9 @@ function Home() {
 								<strong className='main-name'> Tishtanya Shaw</strong>
 							</h1>
 							<p className='heading-description blockquote'>
-								I am passionate software engineer that enjoys learning new things and using programmimg languages
-								like javascript and python to create awesome user experiences.
+								I'm a passionate Software Engineer that enjoys learning new
+								things and using programmimg languages like javascript and
+								python to create awesome user experiences.
 							</p>
 							<div className='heading-type'>
 								<TypeWriter />

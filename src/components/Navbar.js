@@ -4,17 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 import { ImBlog } from 'react-icons/im';
-import {
-	AiOutlineHome,
-	AiOutlineFundProjectionScreen,
-	AiOutlineUser,
-} from 'react-icons/ai';
-
-import { MdDeveloperMode } from 'react-icons/md';
-
+import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from 'react-icons/ai';
+import { Switch, FormControlLabel, CssBaseline } from '@mui/material';
 import { CgFileDocument } from 'react-icons/cg';
 
-function NavBar() {
+function NavBar({ isDarkMode, toggleTheme }) {
 	const [expand, updateExpanded] = useState(false);
 	const [navColour, updateNavbar] = useState(false);
 
@@ -42,6 +36,12 @@ function NavBar() {
 					}}>
 					
 				</Navbar.Toggle>
+				<CssBaseline />
+				<FormControlLabel
+					style={{ marginTop: '10px', height: '50px' }}
+					control={<Switch checked={isDarkMode} onChange={toggleTheme} />}
+					label=''
+				/>
 				<Navbar.Collapse id='responsive-navbar-nav'>
 					<Nav className='ml-auto' defaultActiveKey='#home'>
 						<Nav.Item>
