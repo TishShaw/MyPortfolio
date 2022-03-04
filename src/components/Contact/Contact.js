@@ -31,7 +31,7 @@ function Contact(props) {
 
 	return (
 		<div className='contact-form-container'>
-			<Container fluid className='home-about-section contact-title' id='about'>
+			<Container fluid className='home-about-section contact-title' id='contact'>
 				<Container>
 					<Row>
 						<Col md={12} className='home-about-social'>
@@ -78,8 +78,8 @@ function Contact(props) {
 						name='message'
 						type='message'
 						className='form-control'
-						id='exampleInputPassword1'
-						placeholder='Password'
+						id='message'
+						placeholder='Hire Me'
 						required
 					/>
 				</div>

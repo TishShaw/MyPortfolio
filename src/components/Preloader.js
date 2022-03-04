@@ -7,7 +7,7 @@ function Preloader(props) {
     <div id={props.load ? "preloader" : "preloader-none"}>
       <Loader
         type="Plane"
-        color="#343e47"
+        color="rgb(245, 0 , 251)"
         height={100}
         width={100}
       />

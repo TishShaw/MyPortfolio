@@ -5,17 +5,12 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Footer from './components/Footer';
-import Resume from './components/Resume/ResumeNew';
 import Contact from './components/Contact/Contact';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { amber, pink, grey } from '@mui/material/colors';
 import './style.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import ScrollToTop from './components/ScrollToTop';
-
 
 function App() {
 	const [isDarkMode, setIsDarkMode] = useState(false);
@@ -60,26 +55,22 @@ function App() {
 	};
 
 	return (
-		<Router>
-			<ThemeProvider theme={isDarkMode? darkModeTheme : light }>
+		<div>
+			<ThemeProvider theme={isDarkMode ? darkModeTheme : light}>
 				{load ? (
 					<Preloader load={load} />
 				) : (
 					<div className='App' id={load ? 'no-scroll' : 'scroll'}>
 						<Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-						<ScrollToTop />
-						<Switch>
-							<Route path='/' exact component={Home} />
-							<Route path='/project' component={Projects} />
-							<Route path='/about' component={About} />
-							<Route path='/resume' component={Resume} />
-							<Route path='/contact' component={Contact} />
-						</Switch>
+						<Home />
+						<About />
+						<Projects />
+						<Contact />
 						<Footer />
 					</div>
 				)}
 			</ThemeProvider>
-		</Router>
+		</div>
 	);
 }
 
